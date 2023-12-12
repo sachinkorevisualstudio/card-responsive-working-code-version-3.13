@@ -1,0 +1,124 @@
+/* src/components/Card.css */
+
+.card {
+  width: calc(25% - 20px); /* 4 cards in one line for Desktop */
+  height: 300px;
+  margin: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s;
+  display: inline-block; /* Maintain horizontal layout */
+
+  position: relative; /*added for wishlist*/
+}
+.card .wishlist {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  transition: fill 0.3s; /* Add transition for smoother effect */
+  fill: #f51010;
+  opacity: .2; 
+  stroke: transparent;
+}
+
+/***/
+.wishlist {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.wishlist svg {
+  fill: #2874F0;
+  transition: fill 0.3s;
+}
+
+.wishlist.selected svg {
+  fill: red;
+}
+/****code updated ******/
+
+
+.card .wishlist.selected {
+  fill: red; /* Change fill color when selected */
+}
+.card img {
+  width: 75%; /* Adjust the width to 75% of the card */
+  height: 75%; /* Adjust the height to 75% of the card */
+  object-fit: contain;
+  
+}
+
+.card-info {
+ /* position: absolute;*/
+ color: #ff6d00;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  box-sizing: border-box;
+  transition: background-color 0.3s; /* Add transition for smoother effect */
+}
+
+.price {
+  font-weight: bold;
+  color: #ff6d00;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.description {
+  margin-top: 10px;
+  line-height: 1.2;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  display: none;
+}
+
+.card:hover .overlay {
+  display: block;
+}
+
+.card:hover .card-info {
+  /*background-color: rgba(255, 255, 255, 0.7); /* Change background color on hover */ 
+  
+  box-shadow: 0 3px 16px 0 rgba(0,0,0,.11);
+}
+.card:hover
+{
+  box-shadow: 0 3px 16px 0 rgba(0,0,0,.11);
+}
+/* Media Queries for Responsive Design */
+
+/* Tablets and iPads */
+@media screen and (max-width: 767px) {
+  .card {
+    width: calc(50% - 20px); /* 2 cards in one line for Tablet */
+  }
+}
+
+/* Mobile (Smartphone) */
+@media screen and (max-width: 480px) {
+  .card {
+    width: calc(100% - 20px); /* 1 card in one line for Mobile */
+  }
+}
